@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: SCHOOL-SERVICE
+          uri: ${POSTS-ROUTE-URI:http://localhost:8082}
+          predicates:
+            - Path=/school/**
+
+
+
+
+
